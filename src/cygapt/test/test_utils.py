@@ -168,13 +168,6 @@ class TestUtils(TestCase):
             verbose
         );
 
-        uri = "ftp://cygwin.uib.no/pub/cygwin/setup.ini.sig";
-        utils.uri_get(directory, uri, verbose);
-        self.assertTrue(
-            os.path.exists(os.path.join(directory, "setup.ini.sig")),
-            "ftp request"
-        );
-
         uri = "rsync://cygwin.uib.no/cygwin/setup-legacy.bz2.sig";
         self.assertRaises(
             ApplicationException,
